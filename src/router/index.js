@@ -6,9 +6,8 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../views/index.vue')
+    component: () => import('../pages/index.vue')
   },
-  // Adicione mais rotas conforme necessário
 ]
 
 const router = createRouter({
