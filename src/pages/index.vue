@@ -1,5 +1,14 @@
+
 <template>
-  <div class="bg-black">
-    <p class="text-red-600 text-lg">hello world</p>
+  <div>
+    <MapView />
   </div>
 </template>
+<script lang="js">
+import MapView from '../components/MapView.vue';
+export default {
+  components: {
+    MapView
+  }
+};
+</script>
