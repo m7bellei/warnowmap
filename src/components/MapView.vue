@@ -9,7 +9,6 @@
       :max-bounds="worldBounds"
       @moveend="onMoveEnd"
       :useGlobalLeaflet="false"
-      style="height: 100%; width: 100%;"
     >
       <l-tile-layer 
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
