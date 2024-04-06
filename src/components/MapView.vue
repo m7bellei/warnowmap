@@ -199,7 +199,7 @@ const worldBounds = ref([
 ]);
 
 let populatedNations = ref(enrichNationsWithConflicts(nations, conflicts));
-console.log(populatedNations.value);
+// console.log(populatedNations.value);
 </script>
 
 <style scoped>
