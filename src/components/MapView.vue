@@ -108,7 +108,7 @@
             </section>
           </l-popup>
         </l-marker>
-        <l-marker v-for="tension in nation.current_tensions" :key="`tension-${tension.name}`" :lat-lng="tension.position" :icon="tensionIcon">
+        <l-marker v-for="tension in nation.current_tensions" :key="`tension-${tension.name}`" :lat-lng="tension.position" :icon="isConflictActiveToday(tension) ? tensionIcon : pauseIcon">
           <l-popup v-if="isConflictActiveToday(tension)" >
             <section>
               <h1 class="font-semibold text-yellow-500">{{ tension.type }}</h1>
