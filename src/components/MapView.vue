@@ -7,7 +7,6 @@
       :min-zoom="minZoom"
       :max-zoom="maxZoom"
       :max-bounds="worldBounds"
-      @moveend="onMoveEnd"
       :useGlobalLeaflet="false"
     >
       <l-tile-layer 
@@ -198,17 +197,6 @@ const worldBounds = ref([
   [-90, -180],
   [90, 180]
 ]);
-
-function onMoveEnd() {
-  const map = mapRef.value.mapObject; // Obtém o objeto do mapa Leaflet
-  const bounds = worldBounds.value; // Seus limites máximos definidos anteriormente
-
-  // Verifica se a posição atual está fora dos limites
-  if (!map.getBounds().intersects(bounds)) {
-    // Reajusta a visão do mapa para os limites definidos
-    map.flyToBounds(bounds, { duration: 0.5 });
-  }
-}
 
 let populatedNations = ref(enrichNationsWithConflicts(nations, conflicts));
 console.log(populatedNations.value);
