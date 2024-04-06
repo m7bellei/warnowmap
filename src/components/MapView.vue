@@ -7,7 +7,11 @@
         name="Stadia Maps Basemap">
       </l-tile-layer>
       <l-marker :lat-lng="[38, 139.69]">
-        <l-popup>Um marcador interessante!</l-popup>
+        <l-marker v-for="nation in populatedNations" :key="nation.name" :lat-lng="[nation.position.lat, nation.position.lng]">
+          <l-popup>
+            {{ nation.name }}
+          </l-popup>
+        </l-marker>
       </l-marker>
     </l-map>
   </main>
@@ -18,8 +22,15 @@ import { LMap, LTileLayer, LMarker, LPopup } from "@vue-leaflet/vue-leaflet"
 import 'leaflet/dist/leaflet.css';
 import { ref } from 'vue'
 
+import { enrichNationsWithConflicts } from '@/utils/utils.js';
+import { nations } from '@/constants/nations.js';
+import { conflicts } from '@/constants/conflicts.js';
+
 let zoom = ref(6)
 let center = ref([38, 139.69])
+
+let populatedNations = ref(enrichNationsWithConflicts(nations, conflicts));
+console.log(populatedNations.value);
 
 </script>
 
