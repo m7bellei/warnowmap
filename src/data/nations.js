@@ -16,7 +16,9 @@ export const nations = [
       lng: -95.712891
     },
     current_wars: [],
-    current_tensions: ['China', 'Russia', 'Iran', 'North Korea'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'China',
@@ -35,7 +37,9 @@ export const nations = [
       lng: 104.195397
     },
     current_wars: [],
-    current_tensions: ['India', 'Taiwan', 'United States'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'Russia',
@@ -53,8 +57,10 @@ export const nations = [
       lat: 61.52401,
       lng: 105.318756
     },
-    current_wars: ['Ukraine'],
-    current_tensions: ['United States'],
+    current_wars: [],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'India',
@@ -73,7 +79,9 @@ export const nations = [
       lng: 78.96288
     },
     current_wars: [],
-    current_tensions: ['China'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'United Kingdom',
@@ -92,7 +100,9 @@ export const nations = [
       lng: -3.435973
     },
     current_wars: [],
-    current_tensions: ['Russia'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'France',
@@ -111,7 +121,9 @@ export const nations = [
       lng: 1.888334
     },
     current_wars: [],
-    current_tensions: ['Russia'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'Germany',
@@ -130,7 +142,9 @@ export const nations = [
       lng: 10.451526
     },
     current_wars: [],
-    current_tensions: ['Russia'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'Italy',
@@ -149,7 +163,9 @@ export const nations = [
       lng: 12.56738
     },
     current_wars: [],
-    current_tensions: ['Russia'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'Brazil',
@@ -168,7 +184,9 @@ export const nations = [
       lng: -51.92528
     },
     current_wars: [],
-    current_tensions: ['Venezuela'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'Japan',
@@ -187,7 +205,9 @@ export const nations = [
       lng: 138.252924
     },
     current_wars: [],
-    current_tensions: ['China', 'North Korea'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'South Korea',
@@ -206,7 +226,9 @@ export const nations = [
       lng: 127.766922
     },
     current_wars: [],
-    current_tensions: ['North Korea'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'North Korea',
@@ -224,8 +246,10 @@ export const nations = [
       lat: 40.339852,
       lng: 127.510093
     },
-    current_wars: ['South Korea'],
-    current_tensions: ['United States'],
+    current_wars: [],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'Australia',
@@ -244,7 +268,9 @@ export const nations = [
       lng: 133.775136
     },
     current_wars: [],
-    current_tensions: ['China'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'Canada',
@@ -263,7 +289,9 @@ export const nations = [
       lng: -106.346771
     },
     current_wars: [],
-    current_tensions: ['Russia'],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   {
     name: 'Venezuela',
@@ -281,8 +309,52 @@ export const nations = [
       lat: 6.42375,
       lng: -66.58973
     },
-    current_wars: ['Guyana'],
-    current_tensions: ['United States'],
+    current_wars: [],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
+  },
+  {
+    name: 'Israel',
+    status: 'War',
+    alliances: [],
+    population: 9200000,
+    soldiers: 169500,
+    area: 20770,
+    tanks: 2480,
+    helicopters: 191,
+    aircrafts: 595,
+    ships: 65,
+    flag: '🇮🇱',
+    position: {
+      lat: 31.046051,
+      lng: 34.851612
+    },
+    current_wars: [],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
+  },
+  {
+    name: 'Iran',
+    status: 'Tension',
+    alliances: [],
+    population: 83990000,
+    soldiers: 523000,
+    area: 1648195,
+    tanks: 1600,
+    helicopters: 142,
+    aircrafts: 509,
+    ships: 398,
+    flag: '🇮🇷',
+    position: {
+      lat: 32.427908,
+      lng: 53.688046
+    },
+    current_wars: [],
+    current_tensions: [],
+    current_war_countries: [],
+    current_tension_countries: [],
   },
   
 ]

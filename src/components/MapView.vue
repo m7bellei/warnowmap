@@ -55,6 +55,18 @@
                 <p class="text-gray-600">Ships:</p>
                 <h1 class="font-semibold">{{ nation.ships ? formatNumber(nation.ships) : 0 }}</h1>
               </div>
+              <div v-if="nation.current_war_countries.length > 0" class="flex items-center gap-2">
+                <strong class="text-red-500">Wars:</strong>
+                <ul class="font-semibold">
+                  <li v-for="country in nation.current_war_countries" :key="`war-${country}`">{{ country }}</li>
+                </ul>
+              </div>
+              <div v-if="nation.current_tension_countries.length > 0" class="flex items-center gap-2">
+                <strong class="text-yellow-500">Tensions:</strong>
+                <ul class="font-semibold">
+                  <li v-for="country in nation.current_tension_countries" :key="`tension-${country}`">{{ country }}</li>
+                </ul>
+              </div>
             </section>
           </l-popup>
         </l-marker>
@@ -99,7 +111,7 @@
         <l-marker v-for="tension in nation.current_tensions" :key="`tension-${tension.name}`" :lat-lng="tension.position" :icon="tensionIcon">
           <l-popup>
             <section>
-              <h1 class="font-semibold text-red-500">{{ tension.type }}</h1>
+              <h1 class="font-semibold text-yellow-500">{{ tension.type }}</h1>
               <h1 class="text-lg font-semibold">{{ tension.name }}</h1>
               <div>
                 <div class="flex justify-center items-center">

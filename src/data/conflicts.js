@@ -17,7 +17,7 @@ export const conflicts = [
     country_team1: ["Israel"],
     country_team2: ["Palestine", "Hamas", "Hezbollah", "Islamic Jihad"],
     type: "War",
-    status: "Stoped",
+    status: "Ongoing",
     flags: ["url_to_country_x_flag", "url_to_country_y_flag"],
     position: [31.946570, 35.302723],
     description: "The conflict started in 2023 and is still ongoing",
