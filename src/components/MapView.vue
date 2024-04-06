@@ -1,6 +1,16 @@
 <template>
    <main>
-    <l-map ref="map" v-model:zoom="zoom" v-model:center="center" :useGlobalLeaflet="false">
+    <l-map
+      ref="mapRef"
+      v-model:zoom="zoom"
+      v-model:center="center"
+      :min-zoom="minZoom"
+      :max-zoom="maxZoom"
+      :max-bounds="worldBounds"
+      @moveend="onMoveEnd"
+      :useGlobalLeaflet="false"
+      style="height: 100%; width: 100%;"
+    >
       <l-tile-layer 
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         layer-type="base"
@@ -180,8 +190,26 @@ const tensionIcon = L.icon({
   popupAnchor: [1, -34],
 });
 
-let zoom = ref(6)
-let center = ref([38, 139.69])
+const zoom = ref(2); // Valor inicial do zoom
+const center = ref([51.505, -0.09]); // Centro inicial do mapa (por exemplo, Londres)
+const minZoom = ref(2); // Zoom mínimo para evitar que o mapa fique muito pequeno
+const maxZoom = ref(18); // Zoom máximo para evitar que o mapa fique muito detalhado
+// Define os limites máximos para onde o usuário pode navegar
+const worldBounds = ref([
+  [-90, -180],
+  [90, 180]
+]);
+
+function onMoveEnd() {
+  const map = mapRef.value.mapObject; // Obtém o objeto do mapa Leaflet
+  const bounds = worldBounds.value; // Seus limites máximos definidos anteriormente
+
+  // Verifica se a posição atual está fora dos limites
+  if (!map.getBounds().intersects(bounds)) {
+    // Reajusta a visão do mapa para os limites definidos
+    map.flyToBounds(bounds, { duration: 0.5 });
+  }
+}
 
 let populatedNations = ref(enrichNationsWithConflicts(nations, conflicts));
 console.log(populatedNations.value);
