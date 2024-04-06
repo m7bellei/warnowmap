@@ -56,6 +56,10 @@ export const enrichNationsWithConflicts = (nations, conflicts) => {
   });
 };
 
+export const isConflictActiveToday = (conflict) => {
+  return conflict.conflict_today === true;
+};
+
 export const formatNumber = (number) => {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };

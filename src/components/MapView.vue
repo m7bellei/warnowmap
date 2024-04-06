@@ -72,7 +72,7 @@
         </l-marker>
       </l-marker>
       <template v-for="nation in populatedNations">
-        <l-marker v-for="war in nation.current_wars" :key="`war-${war.name}`" :lat-lng="war.position" :icon="warIcon">
+        <l-marker v-for="war in nation.current_wars" :key="`war-${war.name}`"  :lat-lng="war.position" :icon="isConflictActiveToday(war) ? warIcon : pauseIcon">
           <l-popup>
             <section>
               <h1 class="font-semibold text-red-500">{{ war.type }}</h1>
@@ -90,7 +90,7 @@
               </div>
               <div class="flex items-center gap-2">
                 <p class="text-gray-600">Status:</p>
-                <h1 class="font-semibold">{{ war.status }}</h1>
+                <h1 class="font-semibold">{{ isConflictActiveToday(war) ? 'Active' : 'Inactive' }}</h1>
               </div>
               <div class="flex items-center gap-2">
                 <p class="text-gray-600">Date:</p>
@@ -109,7 +109,7 @@
           </l-popup>
         </l-marker>
         <l-marker v-for="tension in nation.current_tensions" :key="`tension-${tension.name}`" :lat-lng="tension.position" :icon="tensionIcon">
-          <l-popup>
+          <l-popup v-if="isConflictActiveToday(tension)" >
             <section>
               <h1 class="font-semibold text-yellow-500">{{ tension.type }}</h1>
               <h1 class="text-lg font-semibold">{{ tension.name }}</h1>
@@ -126,7 +126,7 @@
               </div>
               <div class="flex items-center gap-2">
                 <p class="text-gray-600">Status:</p>
-                <h1 class="font-semibold">{{ tension.status }}</h1>
+                <h1 class="font-semibold">{{ isConflictActiveToday(tension) ? 'Active' : 'Inactive' }}</h1>
               </div>
               <div class="flex items-center gap-2">
                 <p class="text-gray-600">Date:</p>
@@ -155,12 +155,19 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { ref } from 'vue'
 
-import { enrichNationsWithConflicts, formatNumber } from '@/utils/utils.js';
+import { enrichNationsWithConflicts, formatNumber, isConflictActiveToday } from '@/utils/utils.js';
 import { nations } from '@/data/nations.js';
 import { conflicts } from '@/data/conflicts.js';
 
 const warIcon = L.icon({
   iconUrl: 'icons/war.svg',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+});
+
+const pauseIcon = L.icon({
+  iconUrl: 'icons/stop.svg',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
