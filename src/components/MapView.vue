@@ -2,9 +2,9 @@
    <main>
     <l-map ref="map" v-model:zoom="zoom" v-model:center="center" :useGlobalLeaflet="false">
       <l-tile-layer 
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         layer-type="base"
-        name="Stadia Maps Basemap">
+        name="OpenStreetMap Basemap">
       </l-tile-layer>
       <l-marker :lat-lng="[38, 139.69]">
         <l-marker class="w-max" v-for="nation in populatedNations" :key="nation.name" :lat-lng="[nation.position.lat, nation.position.lng]">
@@ -166,7 +166,6 @@ let center = ref([38, 139.69])
 
 let populatedNations = ref(enrichNationsWithConflicts(nations, conflicts));
 console.log(populatedNations.value);
-
 </script>
 
 <style scoped>
