@@ -19,13 +19,31 @@ const findTensionsForNation = (nationName, conflicts) => {
   );
 };
 
+// Atualiza o status da nação com base na presença de guerras ou tensões
+const updateNationStatus = (nation, wars, tensions) => {
+  if (wars.length > 0) {
+    return "War";
+  } else if (tensions.length > 0) {
+    return "Tension";
+  } else {
+    return "Peace";
+  }
+};
+
 // Adiciona conflitos (guerras e tensões) a cada nação
 export const enrichNationsWithConflicts = (nations, conflicts) => {
-  return nations.map(nation => ({
-    ...nation,
-    current_wars: findWarsForNation(nation.name, conflicts),
-    current_tensions: findTensionsForNation(nation.name, conflicts)
-  }));
+  return nations.map(nation => {
+    const wars = findWarsForNation(nation.name, conflicts);
+    const tensions = findTensionsForNation(nation.name, conflicts);
+    const status = updateNationStatus(nation, wars, tensions);
+
+    return {
+      ...nation,
+      status, // Atualizado com base na presença de guerras ou tensões
+      current_wars: wars,
+      current_tensions: tensions
+    };
+  });
 };
 
 export const formatNumber = (number) => {
