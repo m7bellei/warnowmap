@@ -10,17 +10,20 @@ export const conflicts = [
     description: "The official war in Ukraine started in 2022, but the conflict began in 2014. The war is still ongoing. Russia has annexed Crimea and supports separatists in Eastern Ukraine and trying to take over the whole country.",
     date: "2022 - Present",
     deaths: 14000,
+    url: "https://en.wikipedia.org/wiki/Russo-Ukrainian_War",
   },
   {
     name: "Israel-Palestine War",
     country_team1: ["Israel"],
     country_team2: ["Palestine", "Hamas", "Hezbollah", "Islamic Jihad"],
     type: "War",
-    status: "Ongoing",
+    status: "Stoped",
     flags: ["url_to_country_x_flag", "url_to_country_y_flag"],
-    position: [31.046051, 34.851612],
+    position: [31.946570, 35.302723],
     description: "The conflict started in 2023 and is still ongoing",
     date: "2023 - Present",
+    deaths: 1000,
+    url: "https://en.wikipedia.org/wiki/Israeli%E2%80%93Palestinian_conflict",
   },
   {
     name: "China-India Border Conflict",
@@ -32,6 +35,8 @@ export const conflicts = [
     position: [34.047863, 78.429756],
     description: "The conflict started in 2020 and is still ongoing",
     date: "2020 - Present",
+    deaths: 50,
+    url: "https://en.wikipedia.org/wiki/2020%E2%80%932021_China%E2%80%93India_skirmishes",
   },
   {
     name: "China-Taiwan Conflict",
@@ -43,6 +48,8 @@ export const conflicts = [
     position: [23.69781, 120.960515],
     description: "The conflict started in 1949 and is still ongoing",
     date: "1949 - Present",
+    deaths: 100,
+    url: "https://en.wikipedia.org/wiki/Cross-Strait_relations",
   },
   {
     name: "Russia-Georgia War",
@@ -54,6 +61,8 @@ export const conflicts = [
     position: [42.315407, 43.356892],
     description: "The conflict started in 2008 and is still ongoing",
     date: "2008 - Present",
+    deaths: 850,
+    url: "https://en.wikipedia.org/wiki/Russo-Georgian_War",
   },
   {
     name: "Saudi Arabia-Yemen War",
@@ -65,6 +74,7 @@ export const conflicts = [
     position: [15.552727, 48.516388],
     description: "The conflict started in 2015 and is still ongoing",
     date: "2015 - Present",
+    url: "https://en.wikipedia.org/wiki/Saudi_Arabian-led_intervention_in_Yemen",
   },
   {
     name: "Turkey-Syria War",
@@ -76,6 +86,7 @@ export const conflicts = [
     position: [35.86166, 38.281635],
     description: "The conflict started in 2011 and is still ongoing",
     date: "2011 - Present",
+    url: "https://en.wikipedia.org/wiki/Turkish_military_intervention_in_the_Syrian_Civil_War",
   },
   {
     name: "Venezuela Guiana Esequiba Conflict",
@@ -87,6 +98,7 @@ export const conflicts = [
     position: [6.806071, -58.154968],
     description: "The conflict started in 1966 and is still ongoing",
     date: "1966 - Present",
+    url: "https://en.wikipedia.org/wiki/Guyana%E2%80%93Venezuela_relations",
   },
   {
     name: "United States-Iran Conflict",
@@ -98,6 +110,7 @@ export const conflicts = [
     position: [32.427908, 53.688046],
     description: "The conflict started in 1979 and is still ongoing",
     date: "1979 - Present",
+    url: "https://en.wikipedia.org/wiki/Iran%E2%80%93United_States_relations",
   },
   {
     name: "United States-North Korea Conflict",
@@ -109,6 +122,7 @@ export const conflicts = [
     position: [40.339852, 127.510093],
     description: "The conflict started in 1950 and is still ongoing",
     date: "1950 - Present",
+    url: "https://en.wikipedia.org/wiki/North_Korea%E2%80%93United_States_relations",
   },
   {
     name: "United States-Russia Conflict",
@@ -120,6 +134,7 @@ export const conflicts = [
     position: [61.52401, -105.318756],
     description: "The conflict started in 2014 and is still ongoing",
     date: "2014 - Present",
+    url: "https://en.wikipedia.org/wiki/Russia%E2%80%93United_States_relations",
   },
   {
     name: "United States-China Conflict",
@@ -131,6 +146,7 @@ export const conflicts = [
     position: [35.86166, 104.195397],
     description: "The conflict started in 2018 and is still ongoing",
     date: "2018 - Present",
+    url: "https://en.wikipedia.org/wiki/China%E2%80%93United_States_relations",
   },
   {
     name: "United States-Venezuela Conflict",
@@ -142,5 +158,6 @@ export const conflicts = [
     position: [6.42375, -66.58973],
     description: "The conflict started in 2019 and is still ongoing",
     date: "2019 - Present",
+    url: "https://en.wikipedia.org/wiki/United_States%E2%80%93Venezuela_relations",
   },
 ];
