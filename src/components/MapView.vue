@@ -125,6 +125,10 @@
                 <h1 class="font-semibold">{{ tension.deaths }}</h1>
               </div>
               <p class="text-gray-600 text-sm">{{ tension.description }}</p>
+              <div class="flex items-center gap-2">
+                <p class="text-gray-600">See more on:</p>
+                <a :href="tension.url" target="_blank" class="font-semibold text-blue-500 cursor-pointer hover:underline hover:text-blue-900">Reference</a>
+              </div>
             </section>
           </l-popup>
         </l-marker>
